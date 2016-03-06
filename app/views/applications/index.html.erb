@@ -1,0 +1,5 @@
+<h1>All Applications</h1>
+ 
+ <% current_user.applications.each do |application| %>
+   <p><%= link_to application.title, application %></p>
+ <% end %>
