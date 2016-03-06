@@ -1,4 +1,5 @@
 class ApplicationsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @application = Application.new
   end
@@ -22,12 +23,14 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
+    @events = @application.events.group_by(&:name)
   end
 
   def create
     @application = Application.new
     @application.title = params[:application][:title]
     @application.url = params[:application][:url]
+    @application.user_id = current_user.id
 
     if @application.save
 
