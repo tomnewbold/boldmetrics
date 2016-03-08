@@ -10,17 +10,20 @@
  
  group :development do
    gem 'sqlite3'
+   gem 'pry'
  end
- gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
- gem 'sass-rails', '~> 5.0'
- gem 'autoprefixer-rails'
- gem 'uglifier', '>= 1.3.0'
- gem 'coffee-rails', '~> 4.1.0'
- gem 'jquery-rails'
- gem 'turbolinks'
- gem 'bootstrap'
- gem 'figaro'
- gem 'pry'
+
+
+    gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git', :branch => 'next'
+    gem 'sass-rails', '~> 5.0'
+    gem 'autoprefixer-rails'
+    gem 'uglifier', '>= 1.3.0'
+    gem 'coffee-rails', '~> 4.1.0'
+    gem 'jquery-rails'
+    gem 'turbolinks'
+    gem 'bootstrap'
+    gem 'figaro'
+    
 
  group :development, :test do
    gem 'byebug'
@@ -32,4 +35,4 @@
    gem 'factory_girl_rails'
  end
 
-   gem 'devise'
+gem 'devise'
