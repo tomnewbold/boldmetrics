@@ -9,18 +9,22 @@
 </head>
 <body>
     <div class="container">
-     <ul class="nav nav-tabs">
-      <li><%= link_to "Home", welcome_index_path %></li>
-      <li><%= link_to "About", welcome_about_path %></li>
-      <li><%= link_to "Applications", applications_path %></li>
+      <nav class="">
+     <ul class="nav nav-pills">
+      <li><%= link_to "Home", welcome_index_path, :class => "btn btn-default navbar-btn" %></li>
+      <li><%= link_to "About", welcome_about_path, :class => "btn btn-warning navbar-btn" %></li>
+      <li><%= link_to "Applications", applications_path, :class => "btn btn-info navbar-btn" %></li>
       <% if user_signed_in? %>
-   Signed in as: <strong><%= current_user.email %></strong> |
-   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    
+   <li><%= link_to 'Edit profile', edit_user_registration_path, :class => "btn btn-primary navbar-btn" %></li>
+   <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-danger navbar-btn"  %></li>
+   <li><strong><%= current_user.email %></strong></li>
  <% else %>
-   <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
-   <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
+   <li><%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-primary navbar-btn" %></li>
+   <li><%= link_to "Sign In", new_user_session_path, :class => "btn btn-success navbar-btn"   %></li>
  <% end %>
    </ul>
+ </nav>
 
    <% if flash[:notice] %>
        <div class="alert alert-success">

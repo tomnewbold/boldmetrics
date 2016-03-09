@@ -1,5 +1,8 @@
 <h1>All Applications</h1>
- 
- <% current_user.applications.each do |application| %>
-   <p><%= link_to application.title, application %></p>
- <% end %>
+ <ul class="nav nav-pills">
+ <li><% current_user.applications.each do |application| %>
+   <%= link_to application.title, application, :class => "btn btn-default navbar-btn" %>
+ <% end %></li>
+ </ul>
+
+ <%= link_to "New Application", new_application_path, :class => "btn btn-success navbar-btn" %>
