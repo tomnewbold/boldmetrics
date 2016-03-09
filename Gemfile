@@ -23,6 +23,7 @@
     gem 'turbolinks'
     gem 'bootstrap'
     gem 'figaro'
+    gem "chartkick"
     
 
  group :development, :test do

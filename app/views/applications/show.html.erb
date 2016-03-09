@@ -1,6 +1,8 @@
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
 <h1><%= @application.title %></h1>
  <p><%= @application.url %></p>
- <p><%= @events.count %></p>
+ <%= pie_chart @application.events.group(:name).count %>
+ 
 
 
  <%= link_to "Delete Aplication", @application, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this application?'} %>
